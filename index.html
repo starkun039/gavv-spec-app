@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ガヴスペック比較サイト</title>
+    <style>
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center; 
+        }
+        .label {
+            width: 140px;
+        }
+        .value {
+            white-space: nowrap;
+        }
+        .panel{
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>ガヴスペック比較サイト</h1>
+
+    <h2>ライダー、フォームを選択</h2>
+<select id="leftSelect">
+    <option value="0" selected>ガヴ ポッピングミ</option>
+    <option value="1">ガヴ キッキングミ</option>
+    <option value="2">ガヴ パンチングミ</option>
+    <option value="9">ガヴ キッキングミ&パンチングミ</option>
+    <option value="3">ガヴ ザクザクチップス</option>
+    <option value="4">ガヴ ふわマロ</option>
+    <option value="5">ガヴ まるマロ</option>
+    <option value="6">ガヴ チョコダン</option>
+    <option value="7">ガヴ グルキャン</option>
+    <option value="8">ガヴ バクキャン</option>
+    <option value="10">ガヴ ブシュエル</option>
+    <option value="11">ガヴ ケーキング</option>
+    <option value="12">ガヴ ブリザードソルベ</option>
+    <option value="13">ガヴ オーバーモード</option>
+    <option value="14">ガヴ マスターモード</option>
+    <option value="15">ガヴ アメイジングミ</option>
+</select>
+
+<select id="rightSelect">
+    <option value="0">ガヴ ポッピングミ</option>
+    <option value="1">ガヴ キッキングミ</option>
+    <option value="2">ガヴ パンチングミ</option>
+    <option value="9">ガヴ キッキングミ&パンチングミ</option>
+    <option value="3">ガヴ ザクザクチップス</option>
+    <option value="4">ガヴ ふわマロ</option>
+    <option value="5">ガヴ まるマロ</option>
+    <option value="6">ガヴ チョコダン</option>
+    <option value="7">ガヴ グルキャン</option>
+    <option value="8">ガヴ バクキャン</option>
+    <option value="10">ガヴ ブシュエル</option>
+    <option value="11">ガヴ ケーキング</option>
+    <option value="12">ガヴ ブリザードソルベ</option>
+    <option value="13">ガヴ オーバーモード</option>
+    <option value="14" selected>ガヴ マスターモード</option>
+    <option value="15">ガヴ アメイジングミ</option>
+</select>
+
+<div class="container">
+<div id="leftpanel" class="panel">
+    <h4>比較1</h4>
+
+    <p class="row"><span class = "label"> 名称:</span>
+    <span class = "value" id="leftName"></span>
+    </p>
+    <p class="row"><span class = "label"> 身長:</span>
+    <span class = "value" id="leftHeight"></span>
+    </p>
+    <p class="row"><span class = "label"> 体重:</span>
+    <span class = "value" id="leftWeight"></span>
+    </p>
+    <p class="row"><span class = "label"> パンチ力:</span>
+    <span class = "value" id="leftPunch"></span>
+    </p>
+    <p class="row"><span class = "label"> キック力:</span>
+    <span class = "value" id="leftKick"></span>
+    </p>
+    <p class="row"><span class = "label"> ジャンプ力(ひと跳び):</span>
+    <span class = "value" id="leftJump"></span>
+    </p>
+    <p class="row"><span class = "label"> 走力(100m):</span>
+    <span class = "value" id="leftrunning"></span>
+    </p>
+</div>
+<div id="rightpanel" class="panel">
+    <h4>比較2</h4>
+
+    <p class="row"><span class = "label"> 名称:</span>
+    <span class = "value" id="rightName"></span>
+    </p>
+    <p class="row"><span class = "label"> 身長:</span>
+    <span class = "value" id="rightHeight"></span>
+    </p>
+    <p class="row"><span class = "label"> 体重:</span>
+    <span class = "value" id="rightWeight"></span>
+    </p>
+    <p class="row"><span class = "label"> パンチ力:</span>
+    <span class = "value" id="rightPunch"></span>
+    </p>
+    <p class="row"><span class = "label"> キック力:</span>
+    <span class = "value" id="rightKick"></span>
+    </p>
+    <p class="row"><span class = "label"> ジャンプ力(ひと跳び):</span>
+    <span class = "value" id="rightJump"></span>
+    </p>
+    <p class="row"><span class = "label"> 走力(100m):</span>
+    <span class = "value" id="rightrunning"></span>
+    </p>
+</div>
+</div>
+
+<script>
+    const riders = [
+        {
+            name: "ガヴ ポッピングミ",
+            height: "192.9",
+            weight: "72.3",
+            punch: "1.0",
+            kick: "2.0",
+            jump: "4.2",
+            running: "7.6"
+        },
+        {
+            name: "ガヴ キッキングミ",
+            height: "192.9",
+            weight: "75.6",
+            punch: "1.0",
+            kick: "2.9",
+            jump: "7.0",
+            running: "9.6"
+        },
+        {
+            name: "ガヴ パンチングミ",
+            height: "192.9",
+            weight: "74.7",
+            punch: "2.0",
+            kick: "2.0",
+            jump: "4.2",
+            running: "9.0"
+        },
+        {
+            name: "ガヴ ザクザクチップス",
+            height: "192.9",
+            weight: "75.3",
+            punch: "0.9",
+            kick: "1.0",
+            jump: "3.3",
+            running: "8.0"
+        },
+        {
+            name: "ガヴ ふわマロ",
+            height: "191.0",
+            weight: "65.8",
+            punch: "1.0",
+            kick: "1.0",
+            jump: "2.5",
+            running: "9.5"
+        },
+        {
+            name: "ガヴ まるマロ",
+            height: "191.0~",
+            weight: "65.8~",
+            punch: "1.0",
+            kick: "1.0",
+            jump: "2.5以下",
+            running: "9.5以下"
+        },
+        {
+            name: "ガヴ チョコダン",
+            height: "191.6",
+            weight: "79.2",
+            punch: "0.8",
+            kick: "1.6",
+            jump: "2.3",
+            running: "8.2"
+        },
+        {
+            name: "ガヴ グルキャン",
+            height: "227.8",
+            weight: "860.2",
+            punch: "1.8",
+            kick: "2.4",
+            jump: "1.2",
+            running: "11.0"
+        },
+        {
+            name: "ガヴ バクキャン",
+            height: "236.0",
+            weight: "968.8",
+            punch: "1.8",
+            kick: "2.4",
+            jump: "1.0",
+            running: "11.4"
+        },
+        {
+            name: "ガヴ キッキングミ&パンチングミ",
+            height: "192.9",
+            weight: "78.0",
+            punch: "2.0",
+            kick: "2.9",
+            jump: "6.3",
+            running: "11.0"
+        },
+        {
+            name: "ガヴ ブシュエル",
+            height: "195.8",
+            weight: "86.6",
+            punch: "1.1",
+            kick: "2.1",
+            jump: "2.1",
+            running: "8.6"
+        },
+        {
+            name: "ガヴ ケーキング",
+            height: "196,0",
+            weight: "91.2",
+            punch: "1.3",
+            kick: "6.4",
+            jump: "1.5",
+            running: "9.0"
+        },
+        {
+            name: "ガヴ ブリザードソルベ",
+            height: "195.5",
+            weight: "89.8",
+            punch: "2.6",
+            kick: "6.6",
+            jump: "5.7",
+            running: "6.8"
+        },
+        {
+            name: "ガヴ オーバーモード",
+            height: "198.8",
+            weight: "112.2",
+            punch: "10.0",
+            kick: "8.1",
+            jump: "2.0",
+            running: "9.8"
+        },
+        {
+            name: "ガヴ マスターモード",
+            height: "198.8",
+            weight: "84.5",
+            punch: "5.1",
+            kick: "7.8",
+            jump: "9.1",
+            running: "4.8"
+        },
+        {
+            name: "ガヴ アメイジングミ",
+            height: "197.3",
+            weight: "80.8",
+            punch: "8.8",
+            kick: "9.0",
+            jump: "7.3",
+            running: "6.0"
+        }
+    ];
+    const rider1 = riders[0];
+document.getElementById("leftName").textContent = rider1.name;
+document.getElementById("leftHeight").textContent = rider1.height+ "cm";
+document.getElementById("leftWeight").textContent = rider1.weight+ "kg";
+document.getElementById("leftPunch").textContent = rider1.punch + "t";    
+document.getElementById("leftKick").textContent = rider1.kick+ "t";
+document.getElementById("leftJump").textContent = rider1.jump+ "m";
+document.getElementById("leftrunning").textContent = rider1.running+ "秒";
+const rider2 = riders[14];
+document.getElementById("rightName").textContent = rider2.name;
+document.getElementById("rightHeight").textContent = rider2.height+ "cm";
+document.getElementById("rightWeight").textContent = rider2.weight+ "kg";
+document.getElementById("rightPunch").textContent = rider2.punch + "t";
+document.getElementById("rightKick").textContent = rider2.kick+ "t";
+document.getElementById("rightJump").textContent = rider2.jump+ "m";
+document.getElementById("rightrunning").textContent = rider2.running+ "秒";
+document.getElementById("leftSelect").addEventListener("change", function() {
+    const selectedIndex = this.value;
+    const selectedRider = riders[selectedIndex];
+    document.getElementById("leftName").textContent = selectedRider.name;
+    document.getElementById("leftHeight").textContent = selectedRider.height+ "cm";
+    document.getElementById("leftWeight").textContent = selectedRider.weight+ "kg";
+    document.getElementById("leftPunch").textContent = selectedRider.punch + "t";    
+    document.getElementById("leftKick").textContent = selectedRider.kick + "t";
+    document.getElementById("leftJump").textContent = selectedRider.jump + "m";
+    document.getElementById("leftrunning").textContent = selectedRider.running + "秒";
+});
+document.getElementById("rightSelect").addEventListener("change", function() {
+    const selectedIndex = this.value;
+    const selectedRider = riders[selectedIndex];
+    document.getElementById("rightName").textContent = selectedRider.name;
+    document.getElementById("rightHeight").textContent = selectedRider.height+ "cm";
+    document.getElementById("rightWeight").textContent = selectedRider.weight+ "kg";
+    document.getElementById("rightPunch").textContent = selectedRider.punch + "t";
+    document.getElementById("rightKick").textContent = selectedRider.kick + "t";
+    document.getElementById("rightJump").textContent = selectedRider.jump + "m";
+    document.getElementById("rightrunning").textContent = selectedRider.running + "秒";
+});
+</script>
+</body>
+</html>

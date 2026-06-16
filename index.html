@@ -22,6 +22,12 @@
         }
         .panel{
             width: 200px;
+        } 
+        .value-name{
+            min-height: 3em;
+            white-space: normal;
+            display: flex;
+            align-items: center;
         }
     </style>
 </head>
@@ -89,7 +95,7 @@
     <h4>比較1</h4>
 
     <p class="row"><span class = "label"> 名称:</span>
-    <span class = "value" id="leftName"></span>
+    <span class = "value value-name" id="leftName"></span>
     </p>
     <p class="row"><span class = "label"> 身長:</span>
     <span class = "value" id="leftHeight"></span>
@@ -114,7 +120,7 @@
     <h4>比較2</h4>
 
     <p class="row"><span class = "label"> 名称:</span>
-    <span class = "value" id="rightName"></span>
+    <span class = "value value-name" id="rightName"></span>
     </p>
     <p class="row"><span class = "label"> 身長:</span>
     <span class = "value" id="rightHeight"></span>

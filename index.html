@@ -1,467 +1,103 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ガヴスペック比較サイト</title>
-    <style>
-           .container {
-            display: flex;
-            gap: 20px;
-        }
-        .row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .label {
-            width: 80px;
-        }
-        .value {
-            white-space: nowrap;
-        }
-        .panel{
-            width: 220px;
-        }
-        .value-name{
-            min-height: 3em;
-            white-space: normal;
-            display: flex;
-            align-items: center;
-        }
-        .panel img{
-            width: 180px;
-            height: 180px;
-            object-fit: contain;
-            display: block;
-            margin: 0 auto 10px;
-        }
-    </style>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>仮面ライダーガヴ放送年月日計算サイト</title>
+<style>
+  body {
+    text-align: center;
+    font-family: sans-serif;
+    padding: 20px;
+  }
+
+  input, button {
+    font-size: 18px;
+    padding: 10px;
+    margin: 5px;
+  }
+
+  button {
+    width: 120px;
+  }
+input {
+  width: 80%;
+  max-width: 300px;
+}
+</style>
 </head>
 
 <body>
-    <h1>ガヴスペック比較サイト</h1>
 
-    <h2>ライダー、フォームを選択</h2>
-<select id="leftSelect">
-    <option value="0" selected>ガヴ ポッピングミ</option>
-    <option value="1">ガヴ キッキングミ</option>
-    <option value="2">ガヴ パンチングミ</option>
-    <option value="9">ガヴ キッキングミ&パンチングミ</option>
-    <option value="3">ガヴ ザクザクチップス</option>
-    <option value="4">ガヴ ふわマロ</option>
-    <option value="5">ガヴ まるマロ</option>
-    <option value="6">ガヴ チョコダン</option>
-    <option value="7">ガヴ グルキャン</option>
-    <option value="8">ガヴ バクキャン</option>
-    <option value="10">ガヴ ブシュエル</option>
-    <option value="11">ガヴ ケーキング</option>
-    <option value="12">ガヴ ブリザードソルベ</option>
-    <option value="13">ガヴ オーバーモード</option>
-    <option value="14">ガヴ マスターモード</option>
-    <option value="15">ガヴ アメイジングミ</option>
-    <option value="16">ヴァレン チョコドン</option>
-    <option value="17">ヴァレン ドーマル</option>
-    <option value="18">ヴァレン ブシュエル</option>
-    <option value="19">ヴァレン チョコルド</option>
-    <option value="20">ヴァレン フラッペ</option>
-    <option value="21">ヴラム プリン</option>
-    <option value="22">ヴラム ゼリー</option>
-    <option value="23">ヴラム アラモード</option>
-    <option value="24">ビターガヴ スパーキングミ</option>
-    <option value="25">ビターガヴ ブレイクッキー</option>
-    <option value="26">ビターガヴ バキバキスティック</option>
-    <option value="27">ビターガヴ マーブルブレイクッキー</option>
-    <option value="28">ベイク</option>
-</select>
+<h2>仮面ライダーガヴ放送年月日計算サイト</h2>
+<p style="color: gray;">1話〜50話の数字を入力してください</p>
 
-<select id="rightSelect">
-    <option value="0">ガヴ ポッピングミ</option>
-    <option value="1">ガヴ キッキングミ</option>
-    <option value="2">ガヴ パンチングミ</option>
-    <option value="9">ガヴ キッキングミ&パンチングミ</option>
-    <option value="3">ガヴ ザクザクチップス</option>
-    <option value="4">ガヴ ふわマロ</option>
-    <option value="5">ガヴ まるマロ</option>
-    <option value="6">ガヴ チョコダン</option>
-    <option value="7">ガヴ グルキャン</option>
-    <option value="8">ガヴ バクキャン</option>
-    <option value="10">ガヴ ブシュエル</option>
-    <option value="11">ガヴ ケーキング</option>
-    <option value="12">ガヴ ブリザードソルベ</option>
-    <option value="13">ガヴ オーバーモード</option>
-    <option value="14" selected>ガヴ マスターモード</option>
-    <option value="15">ガヴ アメイジングミ</option>
-    <option value="16">ヴァレン チョコドン</option>
-    <option value="17">ヴァレン ドーマル</option>
-    <option value="18">ヴァレン ブシュエル</option>
-    <option value="19">ヴァレン チョコルド</option>
-    <option value="20">ヴァレン フラッペ</option>
-    <option value="21">ヴラム プリン</option>
-    <option value="22">ヴラム ゼリー</option>
-    <option value="23">ヴラム アラモード</option>
-    <option value="24">ビターガヴ スパーキングミ</option>
-    <option value="25">ビターガヴ ブレイクッキー</option>
-    <option value="26">ビターガヴ バキバキスティック</option>
-    <option value="27">ビターガヴ マーブルブレイクッキー</option>
-    <option value="28">ベイク</option>
-</select>
+<input type="number" id="ep" placeholder="何話？" onkeydown="handleKey(event)">
+<button onclick="calc()">計算</button>
 
-<div class="container">
-<div id="leftpanel" class="panel">
-    <h4>比較1</h4>
-
-    <p class="row"><span class = "label"> 名称:</span>
-    <span class = "value value-name" id="leftName"></span>
-    </p>
-    <p class="row"><span class = "label"> 身長:</span>
-    <span class = "value" id="leftHeight"></span>
-    </p>
-    <p class="row"><span class = "label"> 体重:</span>
-    <span class = "value" id="leftWeight"></span>
-    </p>
-    <p class="row"><span class = "label"> パンチ力:</span>
-    <span class = "value" id="leftPunch"></span>
-    </p>
-    <p class="row"><span class = "label"> キック力:</span>
-    <span class = "value" id="leftKick"></span>
-    </p>
-    <p class="row"><span class = "label"> ジャンプ力(ひと跳び):</span>
-    <span class = "value" id="leftJump"></span>
-    </p>
-    <p class="row"><span class = "label"> 走力(100m):</span>
-    <span class = "value" id="leftrunning"></span>
-    </p>
-</div>
-<div id="rightpanel" class="panel">
-    <h4>比較2</h4>
-
-    <p class="row"><span class = "label"> 名称:</span>
-    <span class = "value value-name" id="rightName"></span>
-    </p>
-    <p class="row"><span class = "label"> 身長:</span>
-    <span class = "value" id="rightHeight"></span>
-    </p>
-    <p class="row"><span class = "label"> 体重:</span>
-    <span class = "value" id="rightWeight"></span>
-    </p>
-    <p class="row"><span class = "label"> パンチ力:</span>
-    <span class = "value" id="rightPunch"></span>
-    </p>
-    <p class="row"><span class = "label"> キック力:</span>
-    <span class = "value" id="rightKick"></span>
-    </p>
-    <p class="row"><span class = "label"> ジャンプ力(ひと跳び):</span>
-    <span class = "value" id="rightJump"></span>
-    </p>
-    <p class="row"><span class = "label"> 走力(100m):</span>
-    <span class = "value" id="rightrunning"></span>
-    </p>
-</div>
-</div>
+<p id="result"></p>
 
 <script>
-    const riders = [
-        {
-            name: "ガヴ<br>ポッピングミ",
-            height: "192.9",
-            weight: "72.3",
-            punch: "1.0",
-            kick: "2.0",
-            jump: "4.2",
-            running: "7.6"
-        },
-        {
-            name: "ガヴ<br>キッキングミ",
-            height: "192.9",
-            weight: "75.6",
-            punch: "1.0",
-            kick: "2.9",
-            jump: "7.0",
-            running: "9.6"
-        },
-        {
-            name: "ガヴ<br>パンチングミ",
-            height: "192.9",
-            weight: "74.7",
-            punch: "2.0",
-            kick: "2.0",
-            jump: "4.2",
-            running: "9.0"
-        },
-        {
-            name: "ガヴ ザクザク<br>チップス",
-            height: "192.9",
-            weight: "75.3",
-            punch: "0.9",
-            kick: "1.0",
-            jump: "3.3",
-            running: "8.0"
-        },
-        {
-            name: "ガヴ<br>ふわマロ",
-            height: "191.0",
-            weight: "65.8",
-            punch: "1.0",
-            kick: "1.0",
-            jump: "2.5",
-            running: "9.5"
-        },
-        {
-            name: "ガヴ<br>まるマロ",
-            height: "191.0~",
-            weight: "65.8~",
-            punch: "1.0",
-            kick: "1.0",
-            jump: "2.5以下",
-            running: "9.5以下"
-        },
-        {
-            name: "ガヴ<br>チョコダン",
-            height: "191.6",
-            weight: "79.2",
-            punch: "0.8",
-            kick: "1.6",
-            jump: "2.3",
-            running: "8.2"
-        },
-        {
-            name: "ガヴ<br>グルキャン",
-            height: "227.8",
-            weight: "860.2",
-            punch: "1.8",
-            kick: "2.4",
-            jump: "1.2",
-            running: "11.0"
-        },
-        {
-            name: "ガヴ<br>バクキャン",
-            height: "236.0",
-            weight: "968.8",
-            punch: "1.8",
-            kick: "2.4",
-            jump: "1.0",
-            running: "11.4"
-        },
-        {
-            name: "ガヴ キッキングミ&パンチングミ",
-            height: "192.9",
-            weight: "78.0",
-            punch: "2.0",
-            kick: "2.9",
-            jump: "6.3",
-            running: "11.0"
-        },
-        {
-            name: "ガヴ<br>ブシュエル",
-            height: "195.8",
-            weight: "86.6",
-            punch: "1.1",
-            kick: "2.1",
-            jump: "2.1",
-            running: "8.6"
-        },
-        {
-            name: "ガヴ<br>ケーキング",
-            height: "196,0",
-            weight: "91.2",
-            punch: "1.3",
-            kick: "6.4",
-            jump: "1.5",
-            running: "9.0"
-        },
-        {
-            name: "ガヴ ブリザード<br>ソルベ",
-            height: "195.5",
-            weight: "89.8",
-            punch: "2.6",
-            kick: "6.6",
-            jump: "5.7",
-            running: "6.8"
-        },
-        {
-            name: "ガヴ<br>オーバーモード",
-            height: "198.8",
-            weight: "112.2",
-            punch: "10.0",
-            kick: "8.1",
-            jump: "2.0",
-            running: "9.8"
-        },
-        {
-            name: "ガヴ<br>マスターモード",
-            height: "198.8",
-            weight: "84.5",
-            punch: "5.1",
-            kick: "7.8",
-            jump: "9.1",
-            running: "4.8"
-        },
-        {
-            name: "ガヴ<br>アメイジングミ",
-            height: "197.3",
-            weight: "80.8",
-            punch: "8.8",
-            kick: "9.0",
-            jump: "7.3",
-            running: "6.0"
-        },
-        {
-            name: "ヴァレン<br>チョコドン",
-            height: "196.8",
-            weight: "79.6",
-            punch: "0.6",
-            kick: "0.9",
-            jump: "3.0",
-            running: "8.0"
-        },
-        {
-            name: "ヴァレン<br>ドーマル",
-            height: "195.0",
-            weight: "82.1",
-            punch: "0.5",
-            kick: "0.7",
-            jump: "4.2",
-            running: "8.8"
-        },
-        {
-            name: "ヴァレン<br>ブシュエル",
-            height: "194.0",
-            weight: "94.2",
-            punch: "0.7",
-            kick: "1.0",
-            jump: "0.8",
-            running: "9.1"
-        },
-        {
-            name: "ヴァレン<br>チョコルド",
-            height: "196.8",
-            weight: "79.6",
-            punch: "1.8",
-            kick: "2.7",
-            jump: "3.6",
-            running: "7.5"
-        },
-        {
-            name: "ヴァレン<br>フラッペ",
-            height: "201.0",
-            weight: "91.5",
-            punch: "2.6",
-            kick: "6.5",
-            jump: "5.5",
-            running: "7.0"
-        },
-        {
-            name: "ヴラム<br>プリン",
-            height: "199.3",
-            weight: "87.8",
-            punch: "1.7",
-            kick: "2.4",
-            jump: "5.1",
-            running: "7.4"
-        },
-        {
-            name: "ヴラム<br>ゼリー",
-            height: "199.3",
-            weight: "86.4",
-            punch: "1.3",
-            kick: "1.8",
-            jump: "3.8",
-            running: "7.7"
-        },
-        {
-            name: "ヴラム<br>アラモード",
-            height: "201.4",
-            weight: "98.5",
-            punch: "2.9",
-            kick: "6.8",
-            jump: "4.6",
-            running: "7.2"
-        },
-        {
-            name:"ビターガヴ<br>スパーキングミ",
-            height:"193.6",
-            weight:"72.9",
-            punch:"2.0",
-            kick:"3.0",
-            jump:"5.7",
-            running:"7.0"
-        },
-        {
-            name:"ビターガヴ<br>ブレイクッキー",
-            height:"201.5",
-            weight:"103.6",
-            punch:"2.7",
-            kick:"6.6",
-            jump:"5.2",
-            running:"8.1"
-        },
-        {
-            name:"ビターガヴ バキバキスティック",
-            height:"196.6",
-            weight:"64.2",
-            punch:"2.7",
-            kick:"6.6",
-            jump:"7.5",
-            running:"6.0"
-        },
-        {
-            name:"ビターガヴ マーブルブレイクッキー",
-            height:"195.3",
-            weight:"106.4",
-            punch:"3.0",
-            kick:"7.0",
-            jump:"5.5",
-            running:"7.2"
-        },
-        {
-            name:"ベイク",
-            height:"195.3",
-            weight:"84.2",
-            punch:"2.5",
-            kick:"6.4",
-            jump:"7.1",
-            running:"6.6"
-        }
-    ];
-    const rider1 = riders[0];
-document.getElementById("leftName").innerHTML = rider1.name;
-document.getElementById("leftHeight").textContent = rider1.height+ "cm";
-document.getElementById("leftWeight").textContent = rider1.weight+ "kg";
-document.getElementById("leftPunch").textContent = rider1.punch + "t";    
-document.getElementById("leftKick").textContent = rider1.kick+ "t";
-document.getElementById("leftJump").textContent = rider1.jump+ "m";
-document.getElementById("leftrunning").textContent = rider1.running+ "秒";
-const rider2 = riders[14];
-document.getElementById("rightName").innerHTML = rider2.name;
-document.getElementById("rightHeight").textContent = rider2.height+ "cm";
-document.getElementById("rightWeight").textContent = rider2.weight+ "kg";
-document.getElementById("rightPunch").textContent = rider2.punch + "t";
-document.getElementById("rightKick").textContent = rider2.kick+ "t";
-document.getElementById("rightJump").textContent = rider2.jump+ "m";
-document.getElementById("rightrunning").textContent = rider2.running+ "秒";
-document.getElementById("leftSelect").addEventListener("change", function() {
-    const selectedIndex = this.value;
-    const selectedRider = riders[selectedIndex];
-    document.getElementById("leftName").innerHTML = selectedRider.name;
-    document.getElementById("leftHeight").textContent = selectedRider.height+ "cm";
-    document.getElementById("leftWeight").textContent = selectedRider.weight+ "kg";
-    document.getElementById("leftPunch").textContent = selectedRider.punch + "t";    
-    document.getElementById("leftKick").textContent = selectedRider.kick + "t";
-    document.getElementById("leftJump").textContent = selectedRider.jump + "m";
-    document.getElementById("leftrunning").textContent = selectedRider.running + "秒";
-});
-document.getElementById("rightSelect").addEventListener("change", function() {
-    const selectedIndex = this.value;
-    const selectedRider = riders[selectedIndex];
-    document.getElementById("rightName").innerHTML = selectedRider.name;
-    document.getElementById("rightHeight").textContent = selectedRider.height+ "cm";
-    document.getElementById("rightWeight").textContent = selectedRider.weight+ "kg";
-    document.getElementById("rightPunch").textContent = selectedRider.punch + "t";
-    document.getElementById("rightKick").textContent = selectedRider.kick + "t";
-    document.getElementById("rightJump").textContent = selectedRider.jump + "m";
-    document.getElementById("rightrunning").textContent = selectedRider.running + "秒";
-});
+function handleKey(event) {
+  if (event.key === "Enter") {
+    calc();
+  }
+}
+function calc() {
+  let ep = Number(document.getElementById("ep").value);
+  let year = 0;
+		let month = 0;
+		let day = 0;
+
+		if (ep >= 1 && ep <= 50) {
+			if (ep >= 1 && ep <= 16) {
+				year = 2024;
+				if (ep >= 1 && ep <= 5) {
+					month = 9;
+					day = 1 + 7 * (ep - 1);
+				} else if (ep >= 6 && ep <= 9) {
+					month = 10;
+					day = 6 + 7 * (ep - 6);
+				} else if (ep >= 10 && ep <= 12) {
+					month = 11;
+					day = 10 + 7 * (ep - 10);
+				} else if (ep >= 13 && ep <= 16) {
+					month = 12;
+					day = 1 + 7 * (ep - 13);
+				}
+			} else if (ep >= 17 && ep <= 50) {
+				year = 2025;
+				if (ep >= 17 && ep <= 20) {
+					month = 1;
+					day = 5 + 7 * (ep - 17);
+				} else if (ep >= 21 && ep <= 24) {
+					month = 2;
+					day = 2 + 7 * (ep - 21);
+				} else if (ep >= 25 && ep <= 28) {
+					month = 3;
+					day = 2 + 7 * (ep - 25);
+				} else if (ep >= 29 && ep <= 32) {
+					month = 4;
+					day = 6 + 7 * (ep - 29);
+				} else if (ep >= 33 && ep <= 36) {
+					month = 5;
+					day = 4 + 7 * (ep - 33);
+				} else if (ep >= 37 && ep <= 41) {
+					month = 6;
+					day = 1 + 7 * (ep - 37);
+				} else if (ep >= 42 && ep <= 45) {
+					month = 7;
+					day = 6 + 7 * (ep - 42);
+				} else if (ep >= 46 && ep <= 50) {
+					month = 8;
+					day = 3 + 7 * (ep - 46);
+				}
+			}
+			document.getElementById("result").textContent = year + "年" + month + "月" + day + "日";
+		} else {
+          document.getElementById("result").textContent = "1話から50話までの数字を入力してください";
+		}
+	}
 </script>
-</body>
-</html>
